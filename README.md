@@ -1,27 +1,19 @@
-# Redwood
+# Redwood Tutorial App
 
-> **NOTICE:** RedwoodJS is very close to a stable version 1.0. In the last two years,
-> the project has matured significantly and is already used in production by a number
-> of startups. We intend to have a 1.0 release candidate before the end of 2021 and
-> to release a truly production-ready 1.0 in early 2022.
+This repo represents the final state of the app created during the [Redwood Tutorial](https://redwoodjs.com/tutorial).
+It is meant to be a starting point for those working on the [Tutorial Part 2](https://redwoodjs.com/tutorial2).
 
-## Getting Started
-- [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
-- [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
+This repo contains much more styling than the one we built together in the tutorial, but is functionally identical.
 
-### Setup
+## Setup
 
-We use Yarn as our package manager. To get the dependencies installed, just do this in the root directory:
+The [tutorial itself](https://redwoodjs.com/tutorial2/prerequisites) contains instructions for getting this repo up and running, but here is a summary of the commands:
 
-```terminal
+```bash
+git clone https://github.com/redwoodjs/redwood-tutorial
+cd redwood-tutorial
 yarn install
+yarn rw prisma migrate dev
+yarn rw prisma db seed
+yarn rw dev
 ```
-
-### Fire it up
-
-```terminal
-yarn redwood dev
-```
-
-Your browser should open automatically to `http://localhost:8910` to see the web app. Lambda functions run on `http://localhost:8911` and are also proxied to `http://localhost:8910/.redwood/functions/*`.

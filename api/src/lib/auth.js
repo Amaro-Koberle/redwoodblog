@@ -1,5 +1,6 @@
 import { parseJWT } from '@redwoodjs/api'
 import { AuthenticationError, ForbiddenError } from '@redwoodjs/graphql-server'
+import { logger } from 'src/lib/logger'
 
 /**
  * getCurrentUser returns the user information together with
@@ -19,6 +20,7 @@ export const getCurrentUser = async (
   { _event, _context }
 ) => {
   if (!decoded) {
+    logger.warn('Missing decoded user')
     return null
   }
 

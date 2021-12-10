@@ -1,5 +1,4 @@
 import BlogPost from 'src/components/BlogPost'
-import { Link, routes } from '@redwoodjs/router'
 
 export const QUERY = gql`
   query BlogPostsQuery {
@@ -16,11 +15,14 @@ export const Loading = () => <div>Loading...</div>
 
 export const Empty = () => <div>Empty</div>
 
-export const Failure = ({ error }) => (
-  <div style={{ color: 'red' }}>Error: {error.message}</div>
-)
+export const Failure = ({ error }) => <div>Error: {error.message}</div>
 
 export const Success = ({ posts }) => {
-  return posts.map((post) => <BlogPost key={post.id} post={post} />)
+  return (
+    <div className="space-y-10">
+      {posts.map((post) => (
+        <BlogPost post={post} summary={true} key={post.id} />
+      ))}
+    </div>
+  )
 }
-

@@ -43,9 +43,6 @@ const PostsList = ({ posts }) => {
     onCompleted: () => {
       toast.success('Post deleted')
     },
-    onError: (error) => {
-      toast.error(error.message)
-    },
     // This refetches the query on the list page. Read more about other ways to
     // update the cache over here:
     // https://www.apollographql.com/docs/react/data/mutations/#making-all-other-cache-updates
@@ -94,14 +91,14 @@ const PostsList = ({ posts }) => {
                   >
                     Edit
                   </Link>
-                  <button
-                    type="button"
+                  <a
+                    href="#"
                     title={'Delete post ' + post.id}
                     className="rw-button rw-button-small rw-button-red"
                     onClick={() => onDeleteClick(post.id)}
                   >
                     Delete
-                  </button>
+                  </a>
                 </nav>
               </td>
             </tr>

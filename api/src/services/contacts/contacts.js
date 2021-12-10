@@ -3,7 +3,7 @@ import { db } from 'src/lib/db'
 
 const validate = (input) => {
   if (input.email && !input.email.match(/[^@]+@[^.]+\..+/)) {
-    throw new UserInputError("Can't create new contact", {
+    throw new UserInputError("Can't create new contact",{
       messages: {
         email: ['is not formatted like an email address'],
       },

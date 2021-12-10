@@ -36,9 +36,6 @@ const Post = ({ post }) => {
       toast.success('Post deleted')
       navigate(routes.posts())
     },
-    onError: (error) => {
-      toast.error(error.message)
-    },
   })
 
   const onDeleteClick = (id) => {
@@ -83,13 +80,13 @@ const Post = ({ post }) => {
         >
           Edit
         </Link>
-        <button
-          type="button"
+        <a
+          href="#"
           className="rw-button rw-button-red"
           onClick={() => onDeleteClick(post.id)}
         >
           Delete
-        </button>
+        </a>
       </nav>
     </>
   )
